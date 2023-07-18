@@ -1,100 +1,87 @@
-Courbet:
-- Updated to latest Vantom Kernel
-- EROFS, F2FS support
-- Improve statusbar dimens
-- Update system blobs from LA.QSSI.13.0.r1-10000.02-qssi.0
-- other minor stuff
-
 ====================
-    07-07-2023     
+    07-18-2023     
 ====================
 
 * bionic
-a385953  Revert "Revert "Switch to jemalloc memory allocator""  [youngherna]
+7c6a94d  Revert "Revert "Switch to jemalloc memory allocator""  [youngherna]
 
 
 * build/soong
-d5a4f80  vndk: Add android.hardware.power-V3-ndk to VndkMustUseVendorVariantList  [klozz]
+f3197e4  vndk: Add android.hardware.power-V3-ndk to VndkMustUseVendorVariantList  [klozz]
 
 
 * frameworks/av
-f024a64  camera: Expose aux cameras in third party apps  [Pierre-Hugues Husson]
-bb5d0c3  camera2 vndk: Improve error handling  [Emilian Peev]
-1d789df  camera: Don't segfault if we get a NULL parameter  [Steve Kondik]
+a8acab8  camera: Expose aux cameras in third party apps  [Pierre-Hugues Husson]
+a9468e6  camera2 vndk: Improve error handling  [Emilian Peev]
+3ab3506  camera: Don't segfault if we get a NULL parameter  [Steve Kondik]
 
 
 * frameworks/base
-8293e28  Camera: Avoid possible NPE after extension session configuration  [Emilian Peev]
-12f6bbb  camera: Add backwards-compatible CaptureResultExtras constructor  [Adithya R]
-072c87f  Camera: Prevent crash with prebuilt camera metadata  [Pranav Vashi]
-4074910  Allow sending vendor- or device-specific commands to the camera HAL.  [Danny Baumann]
+71f5cbe  Camera: Avoid possible NPE after extension session configuration  [Emilian Peev]
+1db16e1  camera: Add backwards-compatible CaptureResultExtras constructor  [Adithya R]
+1674750  Camera: Prevent crash with prebuilt camera metadata  [Pranav Vashi]
+bf6c471  Allow sending vendor- or device-specific commands to the camera HAL.  [Danny Baumann]
+e32d1f0  core: Catch OOB when returning pooled string  [minaripenguin]
+6394aac  core: Workaround for bad base64  [minaripenguin]
+016f4d5  core: Workaround for ASI crash  [minaripenguin]
+5eda8b9  PixelPropUtils: refactor  [aswin7469]
+a6b0e63  PixelPropsUtils: Remove pixel whitelist  [jhenrique09]
+a386be1  base: ApplicationPackageManager: Exclude PE 2021 Midyear from tensor pixel list  [someone5678]
+b5043c9  base: ApplicationPackageManager: Block Tensor features for Recorder  [someone5678]
+d1fb5d0  SystemUI: Fix battery color on QS for circle battery styles  [Pranav Vashi]
+a6384db  Revert "hwui: renderthread/CanvasContext: Reduce the timeout for dequeueing buffers"  [exactxmpl]
 
 
 * vendor/derp
-ecdc558  Merge pull request #42 from CrisBalGreece/13  [Alexander Brunswig]
+6ab4c93  Merge pull request #48 from AbrarNoob/patch-1  [Alexander Brunswig]
+56ad192  Merge pull request #49 from FPSensor/patch-1  [Alexander Brunswig]
+abdc03f  devices: add Motorola Khaje devices  [FPSensor]
 
 
 ====================
-    07-06-2023     
+    07-17-2023     
 ====================
 
-* build/make
-dab591f  Merge tag 'android-13.0.0_r61' of https://android.googlesource.com/platform/build into HEAD  [NurKeinNeid]
+* vendor/derp
+3935df6  devices: add alioth (Poco F3/Mi 11x)  [Hasin Abrar Haque]
 
 
-* frameworks/av
-e456144  Merge tag 'android-13.0.0_r61' of https://android.googlesource.com/platform/frameworks/av into HEAD  [NurKeinNeid]
-
+====================
+    07-16-2023     
+====================
 
 * frameworks/base
-a512475  PixelPropsUtils: Update for July 2023 security patch  [NurKeinNeid]
-666a626  base: Do not reset keyguard going away state  [minarypenguin]
-865b96f  Merge tag 'android-13.0.0_r61' of https://android.googlesource.com/platform/frameworks/base into HEAD  [NurKeinNeid]
-9a18614  Merge pull request #15 from DF-Whyred/13  [Alexander Brunswig]
+6a1f057  fixup! BatteryService: Add SuperDart charging support  [NurKeinNeid]
 
 
-* manifest
-2ad27ed  manifest: July 2023 Security update  [Michael Bestas]
-3edf666  Merge tag 'android-13.0.0_r61' of https://android.googlesource.com/platform/manifest into HEAD  [NurKeinNeid]
-
-
-* packages/apps/Settings
-af951d2  Merge tag 'android-13.0.0_r61' of https://android.googlesource.com/platform/packages/apps/Settings into HEAD  [NurKeinNeid]
-
-
-* packages/modules/Wifi
-1607baa  Merge tag 'android-13.0.0_r61' of https://android.googlesource.com/platform/packages/modules/Wifi into HEAD  [NurKeinNeid]
-
-
-====================
-    07-05-2023     
-====================
-
-* frameworks/av
-d057293  Merge pull request #4 from Klozz/13  [Alexander Brunswig]
-
-
-* frameworks/base
-6cea036  SystemUI: Enable and tune Split notification shade  [minaripenguin]
-
-
-* manifest
-63b96c6  Manifest for Android 13.0.0 Release 61  [The Android Open Source Project]
-
-
-* packages/modules/Bluetooth
-b9c5c6a  Merge pull request #1 from Klozz/13  [Alexander Brunswig]
+* packages/apps/Aperture
+21ece78  Merge pull request #2 from amanrajOO7/13  [Alexander Brunswig]
 
 
 * vendor/derp
-da841c4  Merge pull request #41 from TheStrechh/13  [Alexander Brunswig]
-b363870  devices: Add le_x2 (LeEco LeMax2)  [CrisBal]
-fdaa5b0  devices: Add Poco X5 Pro 5G (redwood)  [Carlos Arriaga]
+e350a04  Merge pull request #47 from hac4us06/13  [Alexander Brunswig]
 
 
 ====================
-    07-04-2023     
+    07-15-2023     
 ====================
 
 * packages/apps/Aperture
-ed10abf  Merge pull request #1 from amanrajOO7/13  [Alexander Brunswig]
+033c7c2  Merge branch 'lineage-20.0' of https://github.com/LineageOS/android_packages_apps_Aperture into HEAD  [Aman Singh]
+
+
+====================
+    07-14-2023     
+====================
+
+* frameworks/base
+262a68a  Merge pull request #18 from Codecity001/13  [Alexander Brunswig]
+
+
+* packages/apps/Aperture
+c1472a0  Aperture: Simplify flash mode handling  [Sebastiano Barezzi]
+9e0a3f7  Aperture: CameraActivity: Get rid of update{PrimaryBar,CameraMode}Buttons()  [Sebastiano Barezzi]
+a1cad08  Aperture: Use the view model for views' rotation  [Sebastiano Barezzi]
+1a512eb  Aperture: Introduce CameraViewModel  [Sebastiano Barezzi]
+
+
