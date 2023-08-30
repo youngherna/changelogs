@@ -1,87 +1,60 @@
-====================
-    07-18-2023     
-====================
+# Courbet 
+- Improved Brightness delay due to stock HWC
+- Improved UI lag spikes
+- Improved Ripple Effect
+- Other minor changes i dont remember
 
-* bionic
-7c6a94d  Revert "Revert "Switch to jemalloc memory allocator""  [youngherna]
+# RisingOS Version 1.3.1 (Damascus) 🌇
 
+Inspired by the rich history of Damascus, one of the oldest cities in the Middle East, this update brings new features, improvements, and bug fixes to enhance your experience with RisingOS.
 
-* build/soong
-f3197e4  vndk: Add android.hardware.power-V3-ndk to VndkMustUseVendorVariantList  [klozz]
+## 🔒 Security
+- [Security] Android August ASB 2023
+- [Security] Safetynet attestation passes by default
 
+## ✨ RisingOS Additions
+- [Feature] Introducing Custom QS Header Image
+- [Feature] Exposed split app button for non-tablet devices
+- [Feature] Added kill/force close system shortcut for accessibility
+- [Feature] [Modified by RisingOS team] Expanded Pulse visualizer options (fixed and forward-ported) - Co-Author: TikkiTikki
+- [Feature] [Modified by RisingOS team] Enhanced gesture navbar length and radius handling  - Co-Authors: spkal01, Terminator-j, jhonboy121
 
-* frameworks/av
-a8acab8  camera: Expose aux cameras in third party apps  [Pierre-Hugues Husson]
-a9468e6  camera2 vndk: Improve error handling  [Emilian Peev]
-3ab3506  camera: Don't segfault if we get a NULL parameter  [Steve Kondik]
+## ⚙️ RisingOS General Changes
 
+### 🛠️ Improvements
+- Revamped System Manager structure and initialization for efficiency and robustness
+- Introduced system UI restart/system reboot prompt for customizations that requires system reloading
+- Optional toggle for Google camera spoof (Exclusive for Pixel devices only)
+- Redesigned recent apps layout for a better app switching experience
+- Applied material you colors to home screen folder background
+- Adjusted Udfps icon scale based on device's resolution
+- Refined immersive status bar-navigation hiding
+- Small inverted back arrow when keyboard is active is now hidden when Hide IME space feature is enabled
+- Performance enhancements for better user experience
+  - Optimized binaries and libraries for performance by tweaking link time optimization flags
+  - Moved weather updates to background to avoid any potential performance regressions
+  - Enabled and improved pro-active kills for devices with modern kernels that supports LRU/PSI
+  - Optimized storage manager service for a more faster lookup - improving system startup times
+  - Moved freezer and compaction thread to background for memory/performance improvements
+  - Implemented service rescheduler API - a service mechanism that delays non-persistant background apps
+  - Improved refresh rate scheduler algorithm - reworked refresh rate selection for smoother transition with low-high refresh rate - Co-Author: arter97
+  - Faster and smoother animations app-launcher transition by disabling blur effect when performing app launch/exit and improving animation transition scale
 
-* frameworks/base
-71f5cbe  Camera: Avoid possible NPE after extension session configuration  [Emilian Peev]
-1db16e1  camera: Add backwards-compatible CaptureResultExtras constructor  [Adithya R]
-1674750  Camera: Prevent crash with prebuilt camera metadata  [Pranav Vashi]
-bf6c471  Allow sending vendor- or device-specific commands to the camera HAL.  [Danny Baumann]
-e32d1f0  core: Catch OOB when returning pooled string  [minaripenguin]
-6394aac  core: Workaround for bad base64  [minaripenguin]
-016f4d5  core: Workaround for ASI crash  [minaripenguin]
-5eda8b9  PixelPropUtils: refactor  [aswin7469]
-a6b0e63  PixelPropsUtils: Remove pixel whitelist  [jhenrique09]
-a386be1  base: ApplicationPackageManager: Exclude PE 2021 Midyear from tensor pixel list  [someone5678]
-b5043c9  base: ApplicationPackageManager: Block Tensor features for Recorder  [someone5678]
-d1fb5d0  SystemUI: Fix battery color on QS for circle battery styles  [Pranav Vashi]
-a6384db  Revert "hwui: renderthread/CanvasContext: Reduce the timeout for dequeueing buffers"  [exactxmpl]
+### ✔️ Stability
+- Removed faulty/blind-picked/experimental source changes in preparation for incoming Android U upstream
+- Removed GameSpace notification modes that required system UI restart to take effect
 
+## 🐛 Fixed
+- Recents apps glitches when swiping task views
+- GameSpace crashes with "device & app notification" access
+- QS notification were hidden when danmaku notification mode is active
+- Wallpaper app lag fixed (caused by Android 14 wallpaper picker UI)
+- Crash when multiple package installer intents were received when installing apps through apps/third party providers
+- Random crash when animating media player play/pause button
+- Fixed app crashes when picking photos through Google Photos
+- Wallpaper app not accessible for tablets
 
-* vendor/derp
-6ab4c93  Merge pull request #48 from AbrarNoob/patch-1  [Alexander Brunswig]
-56ad192  Merge pull request #49 from FPSensor/patch-1  [Alexander Brunswig]
-abdc03f  devices: add Motorola Khaje devices  [FPSensor]
-
-
-====================
-    07-17-2023     
-====================
-
-* vendor/derp
-3935df6  devices: add alioth (Poco F3/Mi 11x)  [Hasin Abrar Haque]
-
-
-====================
-    07-16-2023     
-====================
-
-* frameworks/base
-6a1f057  fixup! BatteryService: Add SuperDart charging support  [NurKeinNeid]
-
-
-* packages/apps/Aperture
-21ece78  Merge pull request #2 from amanrajOO7/13  [Alexander Brunswig]
-
-
-* vendor/derp
-e350a04  Merge pull request #47 from hac4us06/13  [Alexander Brunswig]
-
-
-====================
-    07-15-2023     
-====================
-
-* packages/apps/Aperture
-033c7c2  Merge branch 'lineage-20.0' of https://github.com/LineageOS/android_packages_apps_Aperture into HEAD  [Aman Singh]
-
-
-====================
-    07-14-2023     
-====================
-
-* frameworks/base
-262a68a  Merge pull request #18 from Codecity001/13  [Alexander Brunswig]
-
-
-* packages/apps/Aperture
-c1472a0  Aperture: Simplify flash mode handling  [Sebastiano Barezzi]
-9e0a3f7  Aperture: CameraActivity: Get rid of update{PrimaryBar,CameraMode}Buttons()  [Sebastiano Barezzi]
-a1cad08  Aperture: Use the view model for views' rotation  [Sebastiano Barezzi]
-1a512eb  Aperture: Introduce CameraViewModel  [Sebastiano Barezzi]
-
-
+## 🍒 Cherry-picked Features (Taken from other open-source Android projects)
+- Less boring heads up option - Authors: ezio84, Pranav Vashi, DroidFreak32
+- Option to disable clipboard overlay - Author: Adithya R
+- Toggle for floating rotation button - Author: idoybh
