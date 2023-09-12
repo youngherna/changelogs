@@ -1,60 +1,82 @@
 # Courbet 
-- Improved Brightness delay due to stock HWC
-- Improved UI lag spikes
-- Improved Ripple Effect
-- Other minor changes i dont remember
+- September SCP
+- Switch to Perf kernel (thanks to ElXreno)
+- Improved lag spikes in some cases
+- Switch to Mi Dolby
+- Other minor improvments
 
-# RisingOS Version 1.3.1 (Damascus) 🌇
+* frameworks/av
+1c48e9e  camera: Expose aux cameras in third party apps  [Pierre-Hugues Husson]
+e477f5e  camera2 vndk: Improve error handling  [Emilian Peev]
+41fbbfe  camera: Don't segfault if we get a NULL parameter  [Steve Kondik]
 
-Inspired by the rich history of Damascus, one of the oldest cities in the Middle East, this update brings new features, improvements, and bug fixes to enhance your experience with RisingOS.
 
-## 🔒 Security
-- [Security] Android August ASB 2023
-- [Security] Safetynet attestation passes by default
+* frameworks/base
+8583e6d  Camera: Avoid possible NPE after extension session configuration  [Emilian Peev]
+3ba7685  camera: Add backwards-compatible CaptureResultExtras constructor  [Adithya R]
+e1a4e46  Camera: Prevent crash with prebuilt camera metadata  [Pranav Vashi]
+52425dc  Allow sending vendor- or device-specific commands to the camera HAL.  [Danny Baumann]
 
-## ✨ RisingOS Additions
-- [Feature] Introducing Custom QS Header Image
-- [Feature] Exposed split app button for non-tablet devices
-- [Feature] Added kill/force close system shortcut for accessibility
-- [Feature] [Modified by RisingOS team] Expanded Pulse visualizer options (fixed and forward-ported) - Co-Author: TikkiTikki
-- [Feature] [Modified by RisingOS team] Enhanced gesture navbar length and radius handling  - Co-Authors: spkal01, Terminator-j, jhonboy121
 
-## ⚙️ RisingOS General Changes
+====================
+    09-09-2023     
+====================
 
-### 🛠️ Improvements
-- Revamped System Manager structure and initialization for efficiency and robustness
-- Introduced system UI restart/system reboot prompt for customizations that requires system reloading
-- Optional toggle for Google camera spoof (Exclusive for Pixel devices only)
-- Redesigned recent apps layout for a better app switching experience
-- Applied material you colors to home screen folder background
-- Adjusted Udfps icon scale based on device's resolution
-- Refined immersive status bar-navigation hiding
-- Small inverted back arrow when keyboard is active is now hidden when Hide IME space feature is enabled
-- Performance enhancements for better user experience
-  - Optimized binaries and libraries for performance by tweaking link time optimization flags
-  - Moved weather updates to background to avoid any potential performance regressions
-  - Enabled and improved pro-active kills for devices with modern kernels that supports LRU/PSI
-  - Optimized storage manager service for a more faster lookup - improving system startup times
-  - Moved freezer and compaction thread to background for memory/performance improvements
-  - Implemented service rescheduler API - a service mechanism that delays non-persistant background apps
-  - Improved refresh rate scheduler algorithm - reworked refresh rate selection for smoother transition with low-high refresh rate - Co-Author: arter97
-  - Faster and smoother animations app-launcher transition by disabling blur effect when performing app launch/exit and improving animation transition scale
+* build/make
+47e04cc  Bump Security String to 2023-09-05  [NurKeinNeid]
 
-### ✔️ Stability
-- Removed faulty/blind-picked/experimental source changes in preparation for incoming Android U upstream
-- Removed GameSpace notification modes that required system UI restart to take effect
 
-## 🐛 Fixed
-- Recents apps glitches when swiping task views
-- GameSpace crashes with "device & app notification" access
-- QS notification were hidden when danmaku notification mode is active
-- Wallpaper app lag fixed (caused by Android 14 wallpaper picker UI)
-- Crash when multiple package installer intents were received when installing apps through apps/third party providers
-- Random crash when animating media player play/pause button
-- Fixed app crashes when picking photos through Google Photos
-- Wallpaper app not accessible for tablets
+* frameworks/av
+bece0d2  Merge tag 'android-security-13.0.0_r9' of https://android.googlesource.com/platform/frameworks/av into HEAD  [NurKeinNeid]
 
-## 🍒 Cherry-picked Features (Taken from other open-source Android projects)
-- Less boring heads up option - Authors: ezio84, Pranav Vashi, DroidFreak32
-- Option to disable clipboard overlay - Author: Adithya R
-- Toggle for floating rotation button - Author: idoybh
+
+* frameworks/base
+ba88622  GlobalActionsDialog: Enable blur behind via window flags  [Dhina17]
+a47c4d9  DeviceInfoUtils: Read security patch from org.derpfest.build_security_patch  [jhenrique09]
+53fb589  Merge tag 'android-security-13.0.0_r9' of https://android.googlesource.com/platform/frameworks/base into 13  [NurKeinNeid]
+
+
+* frameworks/native
+1035899  Merge tag 'android-security-13.0.0_r9' of https://android.googlesource.com/platform/frameworks/native into 13-diff  [NurKeinNeid]
+
+
+* packages/apps/DerpLauncher
+c69b78a  Merge tag 'android-security-13.0.0_r9' of https://android.googlesource.com/platform/packages/apps/Launcher3 into HEAD  [NurKeinNeid]
+
+
+* packages/apps/Nfc
+6b6c3b0  Merge tag 'android-security-13.0.0_r9' of https://android.googlesource.com/platform/packages/apps/Nfc into HEAD  [NurKeinNeid]
+
+
+* packages/apps/Settings
+4fc2773  Settings: storage: Do not skip primary user when listing non-logged in users  [Ramii Ahmed]
+f4c4381  Merge tag 'android-security-13.0.0_r9' of https://android.googlesource.com/platform/packages/apps/Settings into HEAD  [NurKeinNeid]
+
+
+* packages/modules/Bluetooth
+f0cd899  Merge tag 'android-security-13.0.0_r9' of https://android.googlesource.com/platform/packages/modules/Bluetooth into HEAD  [NurKeinNeid]
+
+
+* packages/providers/MediaProvider
+6370bbb  Merge tag 'android-security-13.0.0_r9' of https://android.googlesource.com/platform/packages/providers/MediaProvider into HEAD  [NurKeinNeid]
+
+
+* packages/services/Telephony
+dab0f1a  Merge tag 'android-security-13.0.0_r9' of https://android.googlesource.com/platform/packages/services/Telephony into HEAD  [NurKeinNeid]
+
+
+* vendor/derp
+042735c  derp: Add CUSTOM_SECURITY_PATCH prop  [jhenrique09]
+
+
+====================
+    09-08-2023     
+====================
+
+* vendor/qcom/opensource/power
+3e9a845  power: configs: bengal: Add 5.15 changes and add kernel contition to use  [chrisl7]
+63d5069  power: configs: trinket: Add 5.15 changes and add kernel contition to use  [chrisl7]
+1235b53  Revert "Power: Using only v3 powerhal version for this branch"  [chrisl7]
+9440f33  Merge tag 'LA.VENDOR.13.2.0.r1-19400-KAILUA.0' of https://git.codelinaro.org/clo/la/platform/vendor/qcom-opensource/power into HEAD  [chrisl7]
+
+
